@@ -84,7 +84,8 @@ void setup()
 	WiFi.mode(WIFI_OFF);
 	
 	// Configure LED PWM functionalitites
-	ledcSetClockSource(LEDC_USE_XTAL_CLK);
+	//ledcSetClockSource(LEDC_USE_XTAL_CLK); // produces a not defined error when compiling - esp32 core 3.3.3 using board NodeMCU-32S
+	ledcSetClockSource(LEDC_AUTO_CLK);
 	//ledcSetup(led_pwm_channel, led_pwm_freq, led_pwm_resolution);
 	// Attach the channel to the GPIO to be controlled
 	//ledcAttachPin(led_pwm_pin, led_pwm_channel);
